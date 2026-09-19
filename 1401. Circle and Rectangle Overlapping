@@ -1,0 +1,13 @@
+class Solution {
+    public boolean checkOverlap(int r, int cx, int cy,
+                                int left, int bottom, int right, int top) {
+
+        int px = Math.max(left, Math.min(cx, right));
+        int py = Math.max(bottom, Math.min(cy, top));
+
+        int diffX = cx - px;
+        int diffY = cy - py;
+
+        return diffX * diffX + diffY * diffY <= r * r;
+    }
+}
